@@ -1,9 +1,6 @@
 package com.qa.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -16,12 +13,11 @@ public class Employee {
     private String jobTitle;
     private Long contLength;
 
-    public Long getId() {
-        return id;
-    }
+    @ManyToOne(targetEntity = Sector.class)
+    private Sector sector;
 
-    public void setId(Long id) {
-        this.id = id;
+    public Sector getSector() {
+        return sector;
     }
 
     @Override
@@ -32,12 +28,25 @@ public class Employee {
         return id.equals(employee.id) &&
                 name.equals(employee.name) &&
                 jobTitle.equals(employee.jobTitle) &&
-                contLength.equals(employee.contLength);
+                contLength.equals(employee.contLength) &&
+                sector.equals(employee.sector);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, jobTitle, contLength);
+        return Objects.hash(id, name, jobTitle, contLength, sector);
+    }
+
+    public void setSector(Sector sector) {
+        this.sector = sector;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {

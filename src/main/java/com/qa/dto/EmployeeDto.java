@@ -1,6 +1,7 @@
 package com.qa.dto;
 
 import java.awt.image.Kernel;
+import java.util.Objects;
 
 public class EmployeeDto {
 
@@ -12,7 +13,8 @@ public class EmployeeDto {
     public EmployeeDto() {
     }
 
-    public EmployeeDto(String jobTitle, Long contLength) {
+    public EmployeeDto(String name,String jobTitle, Long contLength) {
+        this.name=name;
         this.jobTitle = jobTitle;
         this.contLength = contLength;
     }
@@ -47,5 +49,16 @@ public class EmployeeDto {
 
     public void setContLength(Long contLength) {
         this.contLength = contLength;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        EmployeeDto that = (EmployeeDto) o;
+        return id.equals(that.id) &&
+                name.equals(that.name) &&
+                jobTitle.equals(that.jobTitle) &&
+                contLength.equals(that.contLength);
     }
 }

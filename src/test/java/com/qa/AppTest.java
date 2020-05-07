@@ -3,18 +3,19 @@ package com.qa;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
-/**
- * Unit test for simple App.
- */
+
 public class AppTest 
 {
-    /**
-     * Rigorous Test :-)
-     */
+
     @Test
     public void shouldAnswerWithTrue()
     {
-        assertTrue( true );
+       App app = new App();
+       String [] args = null;
+       App.main(args);
+        assertTrue( app instanceof App );
     }
+
 }

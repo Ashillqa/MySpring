@@ -16,29 +16,13 @@ public class Employee {
     @ManyToOne(targetEntity = Sector.class)
     private Sector sector;
 
-    public Sector getSector() {
-        return sector;
+    public Employee() {
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Employee employee = (Employee) o;
-        return id.equals(employee.id) &&
-                name.equals(employee.name) &&
-                jobTitle.equals(employee.jobTitle) &&
-                contLength.equals(employee.contLength) &&
-                sector.equals(employee.sector);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, jobTitle, contLength, sector);
-    }
-
-    public void setSector(Sector sector) {
-        this.sector = sector;
+    public Employee(String name, String jobTitle, Long contLength) {
+        this.name = name;
+        this.jobTitle = jobTitle;
+        this.contLength = contLength;
     }
 
     public Long getId() {
@@ -72,4 +56,29 @@ public class Employee {
     public void setContLength(Long contLength) {
         this.contLength = contLength;
     }
+
+    public Sector getSector() {
+        return sector;
+    }
+
+    public void setSector(Sector sector) {
+        this.sector = sector;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return id.equals(employee.id) &&
+                name.equals(employee.name) &&
+                jobTitle.equals(employee.jobTitle) &&
+                contLength.equals(employee.contLength);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, jobTitle, contLength);
+    }
 }
+

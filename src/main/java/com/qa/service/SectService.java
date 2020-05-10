@@ -45,7 +45,6 @@ public class SectService {
 // Now we can check Id when updating an employee
     public SectorDto updateSect(Long id, Sector sect){
         Sector update = this.repo.findById(id).orElseThrow(SectorNotFoundException::new);
-        update.setDescription(sect.getDescription());
         update.setEmployee(sect.getEmployee());
         Sector tempSect = this.repo.save(update);
         return this.mapToDto(tempSect);

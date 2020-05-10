@@ -46,9 +46,9 @@ public class EmployeeServiceUnitTest {
     @Before  // this is how we set up our test and set up some situation
     public void setUp(){
         this.empList = new ArrayList<>(); // new empty list for when we look at CRUD methods
-        this.testEmp = new Employee("tom","Accountant",5L); //setting a employee
+        this.testEmp = new Employee("tom",4L); //setting a employee
         this.empList.add(testEmp); // add this to the list
-        this.testEmpWithId = new Employee(testEmp.getName(),testEmp.getJobTitle(),testEmp.getContLength());
+        this.testEmpWithId = new Employee(testEmp.getName(),testEmp.getCerts());
         // apply those details to one which we will give an ID to
         this.testEmpWithId.setId(id); // give the id we created to the test employee with an id
         this.empDto=this.mapToDto(testEmpWithId); // remember the employee needs to be DTO

@@ -1,5 +1,7 @@
 package com.qa.dto;
 
+import com.qa.domain.Sector;
+
 import java.awt.image.Kernel;
 import java.util.Objects;
 
@@ -7,16 +9,17 @@ public class EmployeeDto {
 
     private Long id;
     private String name;
-    private String jobTitle;
-    private Long contLength;
+    private Sector sector;
+    private Long certs;
 
     public EmployeeDto() {
     }
 
-    public EmployeeDto(String name,String jobTitle, Long contLength) {
+    public EmployeeDto(String name, Sector sector, Long certs) {
         this.name=name;
-        this.jobTitle = jobTitle;
-        this.contLength = contLength;
+        this.sector=sector;
+        this.certs=certs;
+
     }
 
     public Long getId() {
@@ -35,20 +38,20 @@ public class EmployeeDto {
         this.name = name;
     }
 
-    public String getJobTitle() {
-        return jobTitle;
+    public Sector getSector() {
+        return sector;
     }
 
-    public void setJobTitle(String jobTitle) {
-        this.jobTitle = jobTitle;
+    public void setSector(Sector sector) {
+        this.sector = sector;
     }
 
-    public Long getContLength() {
-        return contLength;
+    public Long getCerts() {
+        return certs;
     }
 
-    public void setContLength(Long contLength) {
-        this.contLength = contLength;
+    public void setCerts(Long certs) {
+        this.certs = certs;
     }
 
     @Override
@@ -58,7 +61,11 @@ public class EmployeeDto {
         EmployeeDto that = (EmployeeDto) o;
         return id.equals(that.id) &&
                 name.equals(that.name) &&
-                jobTitle.equals(that.jobTitle) &&
-                contLength.equals(that.contLength);
+                certs.equals(that.certs);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, certs);
     }
 }

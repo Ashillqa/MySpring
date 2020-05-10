@@ -4,24 +4,20 @@ import com.qa.domain.Employee;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class SectorDto {
 
     private Long id;
-    private String sect;
-    private String description;
-    private List<EmployeeDto> employees;
+    private String division;
+    private Set<EmployeeDto> employee;
 
     public SectorDto() {
     }
 
-    public SectorDto(String sect, List<EmployeeDto> employees) {
-        this.sect = sect;
-        this.employees = employees;
-    }
-
-    public SectorDto(List<EmployeeDto> employees) {
-        this.employees = employees;
+    public SectorDto(String division) {
+        super();
+        this.division = division;
     }
 
     public Long getId() {
@@ -32,27 +28,19 @@ public class SectorDto {
         this.id = id;
     }
 
-    public String getSect() {
-        return sect;
+    public String getDivision() {
+        return division;
     }
 
-    public void setSect(String sect) {
-        this.sect = sect;
+    public void setDivision(String division) {
+        this.division = division;
     }
 
-    public String getDescription() {
-        return description;
+    public Set<EmployeeDto> getEmployee() {
+        return employee;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public List<EmployeeDto> getEmployees() {
-        return employees;
-    }
-
-    public void setEmployees(List<EmployeeDto> employees) {
-        this.employees = employees;
+    public void setEmployee(Set<EmployeeDto> employee) {
+        this.employee = employee;
     }
 }

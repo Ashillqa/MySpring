@@ -41,7 +41,7 @@ public class EmployeeServiceIntegrationTest {
 
     @Before
     public void setUp(){
-        this.testEmp = new Employee("Tom","Engineer",5L);
+        this.testEmp = new Employee("Tom",3L);
         this.repo.deleteAll();
         this.testEmpWithId = this.repo.save(this.testEmp);
     }

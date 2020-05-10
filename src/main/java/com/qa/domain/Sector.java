@@ -1,9 +1,7 @@
 package com.qa.domain;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 @Entity
 public class Sector {
@@ -11,57 +9,40 @@ public class Sector {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String sect;
-    private String description;
+    private String division;
 
-    @OneToMany(mappedBy = "sector", fetch = FetchType.LAZY)
-    private List<Employee> employee = new ArrayList<>();
+    @OneToMany(mappedBy ="sector", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Employee> employee;
 
-    public List<Employee> getEmployee() {
-        return employee;
-    }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Sector sector = (Sector) o;
-        return id.equals(sector.id) &&
-                sect.equals(sector.sect) &&
-                description.equals(sector.description) &&
-                employee.equals(sector.employee);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, sect, description, employee);
-    }
-
-    public void setEmployee(List<Employee> employee) {
-        this.employee = employee;
-    }
+  public Sector (){
+  }
+  public Sector(String division){
+      this.division=division;
+  }
 
     public Long getId() {
         return id;
     }
 
-    public String getSect() {
-        return sect;
-    }
-
-    public void setSect(String sect) {
-        this.sect = sect;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public void setId(Long id) {
         this.id = id;
     }
+
+    public String getDivision() {
+        return division;
+    }
+
+    public void setDivision(String division) {
+        this.division = division;
+    }
+
+    public Set<Employee> getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Set<Employee> employee) {
+        this.employee = employee;
+    }
+
 }

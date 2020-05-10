@@ -10,8 +10,7 @@ public class Employee {
     private Long id;
 
     private String name;
-    private String jobTitle;
-    private Long contLength;
+    private Long certs;
 
     @ManyToOne(targetEntity = Sector.class)
     private Sector sector;
@@ -19,10 +18,9 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(String name, String jobTitle, Long contLength) {
+    public Employee(String name,Long certs) {
         this.name = name;
-        this.jobTitle = jobTitle;
-        this.contLength = contLength;
+        this.certs=certs;
     }
 
     public Long getId() {
@@ -41,20 +39,12 @@ public class Employee {
         this.name = name;
     }
 
-    public String getJobTitle() {
-        return jobTitle;
+    public Long getCerts() {
+        return certs;
     }
 
-    public void setJobTitle(String jobTitle) {
-        this.jobTitle = jobTitle;
-    }
-
-    public Long getContLength() {
-        return contLength;
-    }
-
-    public void setContLength(Long contLength) {
-        this.contLength = contLength;
+    public void setCerts(Long certs) {
+        this.certs = certs;
     }
 
     public Sector getSector() {
@@ -72,13 +62,13 @@ public class Employee {
         Employee employee = (Employee) o;
         return id.equals(employee.id) &&
                 name.equals(employee.name) &&
-                jobTitle.equals(employee.jobTitle) &&
-                contLength.equals(employee.contLength);
+                certs.equals(employee.certs) &&
+                sector.equals(employee.sector);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, jobTitle, contLength);
+        return Objects.hash(id, name, certs, sector);
     }
 }
 

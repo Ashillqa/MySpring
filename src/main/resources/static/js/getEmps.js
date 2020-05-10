@@ -7,11 +7,12 @@ function getData() {
         })
         .then(function (data) {
             data.forEach((user) => {
-                const {name, jobTitle} = user;
+                const {id,name, certs} = user;
                 document.getElementById('result').innerHTML += `<div>
                 <ul>
+                    <li> ID: ${id}</li>
                     <li> Name : ${name}</li>
-                    <li> Job : ${jobTitle} </li>
+                    <li> certificates : ${certs} </li>
                 </ul>
             </div>` ;
             });

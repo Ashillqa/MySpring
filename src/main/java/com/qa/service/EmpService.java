@@ -44,8 +44,7 @@ public class EmpService {
 // Now we can check Id when updating an employee
     public EmployeeDto updateEmp(Long id, Employee emp){
         Employee update = this.repo.findById(id).orElseThrow(EmployeeNotFoundException::new);
-        update.setJobTitle(emp.getJobTitle());
-        update.setContLength(emp.getContLength());
+        update.setCerts(emp.getCerts());
         Employee tempEmp = this.repo.save(emp);
         return this.mapToDto(tempEmp);
     }

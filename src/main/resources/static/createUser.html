@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <title>Bare - create</title>
+
+</head>
+
+<body>
+
+
+
+
+             <h2>Create an Employee</h2>
+
+             <form  id="postData">
+                    <div>
+                        <h2 style="text-align: center">Name</h2>
+                    <input type="text" name="" id="name" pattern="[a-zA-Z][a-zA-Z ]{2,}" required>
+                    </div>
+                 <div>
+                     <h2 style="text-align: center">Certificates</h2>
+                     <input type="number" name="" id="certificates" min="0">
+                    </div>
+                    <input type="submit" value="SEND POST">
+                </form>
+                <p id="message"></p>
+
+
+            <h2>Delete an Employee</h2>
+
+            <form  id="delData">
+                <div>
+                    <h2 style="text-align: center">Employee</h2>
+                    <input type="text" name="" id="person" pattern="[a-zA-Z][a-zA-Z ]{2,}" required>
+                </div>
+                <input type="submit" value="DELETE POST">
+            </form>
+            <p id="message2"></p>
+        </div>
+    </div>
+</div>
+
+
+<script src="js/createEmp.js"></script>
+
+</body>
+</html>

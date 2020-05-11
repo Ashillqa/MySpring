@@ -10,7 +10,7 @@ function getData() {
                 const {id,name, certs} = user;
                 document.getElementById('result').innerHTML += `<div>
                 <ul>
-                    <li> ID: ${id}</li>
+                    <li 'hidden'> ID: ${id}</li>
                     <li> Name : ${name}</li>
                     <li> certificates : ${certs} </li>
                 </ul>

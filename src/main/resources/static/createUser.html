@@ -61,14 +61,15 @@
                 <p id="message"></p>
 
 
-            <h2>Delete an Employee</h2>
+            <h2 id="update header"></h2>
 
-            <form  id="delData">
+            <form  id="upData">
                 <div>
                     <h2 style="text-align: center">Employee</h2>
-                    <input type="text" name="" id="person" pattern="[a-zA-Z][a-zA-Z ]{2,}" required>
+                    <p id="NameToUp"></p>
+                    <input type="number" name="" id="certToUp" min="0">
                 </div>
-                <input type="submit" value="DELETE POST">
+                <input type="submit" value="UPDATE POST">
             </form>
             <p id="message2"></p>
         <a href="view.html">See Employees</a>
@@ -78,6 +79,7 @@
 
 
 <script src="js/createEmp.js"></script>
+<script src="js/updateEmp.js"></script>
 
 </body>
 </html>

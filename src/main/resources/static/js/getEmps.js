@@ -13,7 +13,9 @@ function getData() {
                     <li hidden> ID: ${id}</li>
                     <li> Name : ${name}</li>
                     <li> certificates : ${certs} </li>
-                    <button id="E${id}">Delete</button>
+                    <button onclick="func(${id})">Delete</button><span>
+                    <p>Update certificates</p><input id="U${id}" type="number" min="0">
+                    <button onclick="upd(${id},'${name}')">Update</button></span>
                 </ul>
             </div>` ;
             });

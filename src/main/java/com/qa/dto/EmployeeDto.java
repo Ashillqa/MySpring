@@ -9,17 +9,14 @@ public class EmployeeDto {
 
     private Long id;
     private String name;
-    private Sector sector;
     private Long certs;
 
     public EmployeeDto() {
     }
 
-    public EmployeeDto(String name, Sector sector, Long certs) {
+    public EmployeeDto(String name, Long certs) {
         this.name=name;
-        this.sector=sector;
         this.certs=certs;
-
     }
 
     public Long getId() {
@@ -36,14 +33,6 @@ public class EmployeeDto {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Sector getSector() {
-        return sector;
-    }
-
-    public void setSector(Sector sector) {
-        this.sector = sector;
     }
 
     public Long getCerts() {
@@ -64,8 +53,8 @@ public class EmployeeDto {
                 certs.equals(that.certs);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, certs);
-    }
+   // @Override
+  //  public int hashCode() {
+  //      return Objects.hash(id, name, certs);
+  //  }
 }

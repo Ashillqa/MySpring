@@ -6,13 +6,13 @@ import java.util.*;
 @Entity
 public class Sector {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     private Long id;
 
     private String division;
 
-    @OneToMany(mappedBy ="sector", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<Employee> employee;
+    @OneToMany(mappedBy ="sector", fetch = FetchType.LAZY)
+    private List<Employee> employee = new ArrayList<>();
 
 
   public Sector (){
@@ -37,11 +37,11 @@ public class Sector {
         this.division = division;
     }
 
-    public Set<Employee> getEmployee() {
+    public List<Employee> getEmployee() {
         return employee;
     }
 
-    public void setEmployee(Set<Employee> employee) {
+    public void setEmployee(List<Employee> employee) {
         this.employee = employee;
     }
 

@@ -10,7 +10,7 @@ public class SectorDto {
 
     private Long id;
     private String division;
-    private Set<EmployeeDto> employee;
+    private List<EmployeeDto> employee = new ArrayList<>();
 
     public SectorDto() {
     }
@@ -36,11 +36,11 @@ public class SectorDto {
         this.division = division;
     }
 
-    public Set<EmployeeDto> getEmployee() {
+    public List<EmployeeDto> getEmployee() {
         return employee;
     }
 
-    public void setEmployee(Set<EmployeeDto> employee) {
+    public void setEmployee(List<EmployeeDto> employee) {
         this.employee = employee;
     }
 }

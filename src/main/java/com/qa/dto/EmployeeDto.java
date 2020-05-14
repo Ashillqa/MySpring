@@ -11,13 +11,7 @@ public class EmployeeDto {
     private String name;
     private Long certs;
 
-    public EmployeeDto() {
-    }
 
-    public EmployeeDto(String name, Long certs) {
-        this.name=name;
-        this.certs=certs;
-    }
 
     public Long getId() {
         return id;

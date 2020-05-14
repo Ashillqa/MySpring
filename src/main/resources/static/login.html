@@ -5,18 +5,21 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
+    <title>Bare - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
     <link href="startbootstrap-bare-gh-pages/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="startbootstrap-bare-gh-pages/vendor/jquery/jquery.slim.min.js"></script>
     <script src="startbootstrap-bare-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-
-    <title>Bare - create</title>
 
 </head>
 
 <body>
 
+<!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
         <a class="navbar-brand" href="#">Start Bootstrap</a>
@@ -26,12 +29,12 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home
+                    <a class="nav-link" href="#">Home
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Employees</a>
+                    <a class="nav-link" href="createUser.html">Employees</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="viewSect.html">Sector</a>
@@ -41,32 +44,45 @@
     </div>
 </nav>
 
-
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h1 class="mt-5">Login</h1>
+        </div>
+    </div>
+</div>
 
 <div class="container">
     <div class="col-lg-12 text-center">
-             <h2>Create an Employee</h2>
+        <h2>Enter Details below</h2>
 
-             <form  id="postData">
-                    <div>
-                        <h2 style="text-align: center">Name</h2>
-                    <input type="text" name="" id="name" pattern="[a-zA-Z][a-zA-Z ]{2,}" required>
-                    </div>
-                 <div>
-                     <h2 style="text-align: center">Certificates</h2>
-                     <input type="number" name="" id="certificates" min="0">
-                    </div>
-                    <input type="submit" value="SEND POST">
-                </form>
-                <p id="message"></p>
-        <a href="view.html">See Employees</a>
-        </div>
+        <form  id="LogData">
+            <div>
+                <h2 style="text-align: center">Username</h2>
+                <input type="text" name="" id="useName" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required>
+            </div>
+            <div>
+                <h2 style="text-align: center">Password</h2>
+                <input type="password" name="" id="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required autocomplete="off">
+            </div>
+            <input type="submit" value="SEND POST">
+        </form>
+        <p id="messing"></p>
     </div>
+</div>
+
+<div class="container">
+    <button onclick="Lfun()">Clicks</button>
+    <p id="listFun"></p>
+</div>
 
 
 
-<script src="js/createEmp.js"></script>
-<script src="js/updateEmp.js"></script>
+<!-- Bootstrap core JavaScript -->
+<!--<script src="js/users.js"></script> -->
+<script src="js/red.js"></script>
 
 </body>
+
 </html>

@@ -19,6 +19,7 @@ public class Employee {
     }
 
     public Employee(String name,Long certs) {
+        super();
         this.name = name;
         this.certs=certs;
     }

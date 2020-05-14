@@ -59,9 +59,11 @@ public class SectService {
     }
 
     public SectorDto addEmpToSect(Long id, Employee emp){
-        Sector sect = this.repo.findById(id).orElseThrow(SectorNotFoundException::new);
-        Employee tmp = this.empRepo.save(emp);
-        sect.getEmployee().add(tmp);
-        return this.mapToDto(this.repo.saveAndFlush(sect));
+        Sector toUpdate = this.repo.findById(id).orElseThrow(SectorNotFoundException::new);
+        Employee newEmp = this.empRepo.save(emp);
+        toUpdate.getEmployee().add(newEmp);
+        return this.mapToDto(this.repo.saveAndFlush(toUpdate));
     }
+
+
 }

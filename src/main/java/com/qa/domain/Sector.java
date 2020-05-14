@@ -11,7 +11,7 @@ public class Sector {
 
     private String division;
 
-    @OneToMany(mappedBy ="sector", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy ="sector")
     private List<Employee> employee = new ArrayList<>();
 
 

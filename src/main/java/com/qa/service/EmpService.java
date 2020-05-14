@@ -1,6 +1,7 @@
 package com.qa.service;
 
 import com.qa.domain.Employee;
+import com.qa.domain.Sector;
 import com.qa.dto.EmployeeDto;
 import com.qa.exception.EmployeeNotFoundException;
 import com.qa.repo.empRepository;

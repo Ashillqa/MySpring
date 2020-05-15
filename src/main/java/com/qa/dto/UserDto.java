@@ -31,10 +31,7 @@ public class UserDto {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return "DuckDTO [id=" + id + ", username=" + username + ", password=" + password + "]";
-    }
+
 
     @Override
     public int hashCode() {

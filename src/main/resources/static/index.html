@@ -12,6 +12,11 @@
 
   <!-- Bootstrap core CSS -->
   <link href="startbootstrap-bare-gh-pages/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    #greets{
+      color: white;
+    }
+  </style>
 
 </head>
 
@@ -19,12 +24,8 @@
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Start Bootstrap</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <button><a href="accDetails.html">Account</a></button>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
             <a class="nav-link" href="#">Home
@@ -39,7 +40,6 @@
           </li>
         </ul>
       </div>
-    </div>
   </nav>
 
   <!-- Page Content -->
@@ -49,7 +49,7 @@
         <h1 class="mt-5">Employee Development</h1>
         <p class="lead">See what level your workers are at</p>
         <ul class="list-unstyled">
-          <li>A QA masterclass</li>
+          <li id="greets">A QA masterclass</li>
         </ul>
       </div>
     </div>
